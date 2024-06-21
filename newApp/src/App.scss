@@ -1,0 +1,85 @@
+// #root {
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   padding: 2rem;
+//   text-align: center;
+// }
+body{
+background-color: white;
+margin: 0px;
+padding: 0px;
+img{
+width: 30px;
+}
+.mainDiv{
+align-items: center;
+justify-content: center;
+.header{
+align-items: center;
+justify-content: space-between;
+display: flex;
+// margin: 20px;
+padding: 20px;
+img{
+
+}
+}
+}
+}
+.head{
+background-image:url(assets/bg-desktop-light.jpg);
+overflow: hidden;
+}
+form{
+justify-content: center;
+margin-left: 25%;
+
+justify-content: center;
+
+padding: 20px;
+}
+.formB{
+display: flex;
+margin-right: 25%;
+button{
+padding: 5px;
+margin: 2px;
+}
+}
+.form{
+  width: 347px;
+  justify-content: center;
+  text-align: center;
+padding: 10px;
+border-radius: 7px;
+border: none;
+margin-bottom: 20px;
+}
+.listF{
+list-style: none;
+display: flex;
+flex-direction: row;
+margin-left: 20%;
+margin-right: 20%;
+// padding: 0px;
+li{
+  margin: 8px;}
+}
+.list{
+list-style: none;
+padding: 20px;
+margin-left: 25%;
+margin-right: 25%;
+li{
+padding: 20px;
+
+border-bottom: solid rgb(206, 195, 195) .3px;
+}
+}
+.InputList{
+  margin-left: 20%;
+  margin-right: 20%;
+border: solid white;
+border-radius: 8px;
+background-color: rgb(236, 241, 241);
+}
