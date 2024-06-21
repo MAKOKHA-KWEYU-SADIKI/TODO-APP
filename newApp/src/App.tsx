@@ -2,13 +2,7 @@ import { useState } from 'react'
 import './App.scss'
 import moon  from'./assets/icon-moon.svg'
 function App() {
-  const [list, setCount] = useState([])
-  const [input,update]=useState('');
-  const additem=()=>{
-    if (input.trim()){
-      setCount([...input,update.trim()])
-    }
-  }
+  const [count, setCount] = useState(0)
 
   return (
     <div className='mainDiv'>
@@ -17,14 +11,14 @@ function App() {
        <h1>TODO</h1>
        <img src={moon} alt="" />
        </div>
-       <div className='formB   '>
-          <form action="name">
-             <input type="text" className='form' placeholder='currently typing' />
-   
-          </form>
-           <button className='btn' onClick={update}>
-             submit
-          </button> 
+       <div className='formB'>
+       <form action="name">
+          <input type="text" className='form' placeholder='currently typing' />
+          <button className='btn'>
+          submit
+        </button>
+        </form>
+     
        </div>
       </div>
       
