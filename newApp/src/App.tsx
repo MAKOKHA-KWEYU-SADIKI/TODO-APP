@@ -4,7 +4,7 @@ import moon  from'./assets/icon-moon.svg'
 import { useState } from 'react'
 function App() {
   const[list,setList]=useState<string[]>([
-    "10 minutes meditation","Read for one hour","Pickup groceries","Complete to do frontend mentor"
+    "Reading Qur'an","Listening to Qur'an recitations","Learning Tawhid","Doing exercises"
   ]);
   const [inputValue,setInput]=useState<string>('');
   const addItem=(e:React.FormEvent<HTMLFormElement>)=>{
@@ -48,7 +48,7 @@ function App() {
             {list.map((item,index)=>(
               <li key={index}>
                 <input type='text' value={item} onChange={(e)=>editItem(index,e.target.value)}/>
-                <button onClick={()=>deleteItem(index)}>Delete</button>
+                <button onClick={()=>deleteItem(index)} className='del'>Delete</button>
               </li>
             ))}
           </ul>
