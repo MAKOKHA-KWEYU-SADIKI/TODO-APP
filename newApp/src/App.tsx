@@ -1,8 +1,27 @@
-import { useState } from 'react'
+
 import './App.scss'
 import moon  from'./assets/icon-moon.svg'
+import { useState } from 'react'
 function App() {
-  const [count, setCount] = useState(0)
+  const[list,setList]=useState<string[]>([
+    "10 minutes meditation","Read for one hour","Pickup groceries","Complete to do frontend mentor"
+  ]);
+  const [inputValue,setInput]=useState<string>('');
+  const addItem=(e:React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
+    if (inputValue.trim()=='')return;
+    setList([...list,inputValue.trim()])
+    setInput('');
+  }
+  const deleteItem=(index:number)=>{
+    setList(list.filter((_,i)=>i !==index));
+  }
+  const editItem=(index:number,newValue:string)=>{
+    const updateList=[...list];
+    updateList[index]=newValue
+    setList(updateList)
+
+  }
 
   return (
     <div className='mainDiv'>
@@ -12,11 +31,11 @@ function App() {
        <img src={moon} alt="" />
        </div>
        <div className='formB'>
-       <form action="name">
-          <input type="text" className='form' placeholder='currently typing' />
+       <form action="name" onSubmit={addItem}>
+          <input type="text" className='form' placeholder='add item' onChange={(e)=>setInput(e.target.value)} />
           <button className='btn'>
-          submit
-        </button>
+            submit
+          </button>
         </form>
      
        </div>
@@ -26,10 +45,12 @@ function App() {
   
         <div>
           <ul  className='list'>
-            <li>10 minutes meditation</li>
-            <li>Read for 1 hour</li>
-            <li>Pickup groceries</li>
-            <li>complete to do App frontend Mentor</li>
+            {list.map((item,index)=>(
+              <li key={index}>
+                <input type='text' value={item} onChange={(e)=>editItem(index,e.target.value)}/>
+                <button onClick={()=>deleteItem(index)}>Delete</button>
+              </li>
+            ))}
           </ul>
           <div>
         <ul className='listF'>
